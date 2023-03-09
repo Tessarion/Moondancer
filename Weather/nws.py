@@ -28,7 +28,7 @@ dictOfZones = {
 for k, v in dictOfZones.items():
     url = R'https://api.weather.gov/zones/land/{}/forecast'.format(v)
     response = s.get(url)
-    for x in response.json()['periods']:
+    for x in response.json()['properties']['periods']:
         if x['name'] in weekend:
             print(k, x['name'])
             print(x['detailedForecast'])
